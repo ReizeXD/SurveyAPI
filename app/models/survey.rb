@@ -7,7 +7,7 @@ class Survey < ApplicationRecord
   validates :title, presence: true
   validates :start_date, presence: true
   validates :end_date, presence: true
-  validates :end_date_after_start_date
+  validate :end_date_after_start_date
 
   #valida se a data de término é posterior à data de início
   def end_date_after_start_date
@@ -20,5 +20,5 @@ class Survey < ApplicationRecord
   def open?
     !closed && Date.today.between?(start_date, end_date)
   end
-end
+
 end

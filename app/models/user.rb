@@ -1,8 +1,8 @@
 class User < ApplicationRecord
     has_secure_password
 
-    has_many :surveys
-    has_many :responses
+    has_many :surveys, dependent: :destroy
+    has_many :responses, dependent: :destroy
 
     enum role: { respondent: 0, coordinator: 1 }
 
