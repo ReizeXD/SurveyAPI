@@ -49,6 +49,6 @@ end
 gem "graphql", "~> 2.3"
 gem "graphiql-rails", group: :development
 
-#gem "sprockets", "~> 3.0"
-
 gem "propshaft", "~> 1.0"
+
+gem 'jwt'

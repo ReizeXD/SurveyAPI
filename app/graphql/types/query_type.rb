@@ -28,11 +28,7 @@ module Types
     #  "Hello World!"
     #end
 
-    field :all_surveys,[Types::SurveyType],null: false, description: "Retorna uma lista com todas as pesquisas"  
-
-    def all_surveys
-      Survey.all
-    end
+    field :all_surveys, resolver: Queries::AllSurveys
 
   end
 end
