@@ -28,7 +28,11 @@ module Types
     #  "Hello World!"
     #end
 
-    field :all_surveys, resolver: Queries::AllSurveys
+    field :all_surveys, resolver: Queries::Surveys::AllSurveys, description: "Retorna uma lista com todas as pesquisas"
+    field :survey_by_id, resolver: Queries::Surveys::SurveyById, description: "Retorna uma pesquisa pelo id fornecido"
+    field :open_surveys, resolver: Queries::Surveys::OpenSurveys, description: "Retorna uma lista com todas as pesquisas abertas"
+    field :closed_surveys, resolver: Queries::Surveys::ClosedSurveys, description: "Retorna uma lista com todas as pesquisas fechadas"
+    field :users_surveys, resolver: Queries::Surveys::UserSurveys, description: "Retorna uma lista com todas as pesquisas do coordenador"
 
   end
 end
