@@ -1,7 +1,7 @@
 module Queries
     module Surveys
         class UserSurveys < Queries::BaseQuery
-        type [Types::SurveyType], null: false
+            type [Types::SurveyType], null: false
         
             def resolve
                 if what_role=='coordinator'

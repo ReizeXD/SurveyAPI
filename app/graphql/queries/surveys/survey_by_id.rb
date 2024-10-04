@@ -1,9 +1,9 @@
 module Queries
     module Surveys
         class SurveyById < Queries::BaseQuery
-        type [Types::SurveyType], null: false
-        
-        argument :id, ID, required: true, description: "ID do usuario"
+            type Types::SurveyType, null: false
+            
+            argument :id, ID, required: true, description: "ID do usuario"
             def resolve(id:)
                 if what_role=="coordinator"
                     begin

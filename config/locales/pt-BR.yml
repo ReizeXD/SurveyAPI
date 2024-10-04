@@ -1,0 +1,5 @@
+pt-BR:
+  errors:
+    user:
+      token_not_created: "O token do usuário não foi criado."
+      invalid_credentials: "Credenciais erradas do usuário."

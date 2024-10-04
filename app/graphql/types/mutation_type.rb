@@ -8,5 +8,8 @@ module Types
     def test_field
       "Hello World"
     end
+
+    field :create_user, resolver: Mutations::Users::CreateUser
+    field :login_user, resolver: Mutations::Users::LoginUser
   end
 end

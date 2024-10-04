@@ -6,13 +6,16 @@ class GraphqlController < ApplicationController
   # but you'll have to authenticate your user separately
   # protect_from_forgery with: :null_session
 
+
+  
   def execute
     variables = prepare_variables(params[:variables])
     query = params[:query]
     operation_name = params[:operationName]
+
     context = {
       # Query context goes here, for example:
-      #current_user: current_user
+      current_user: current_user
     }
 
     result = SurveyapiSchema.execute(query, variables: variables, context: context, operation_name: operation_name)
@@ -23,11 +26,12 @@ class GraphqlController < ApplicationController
     handle_error_in_development(e)
   end
 
-  def authenticate_request
-    raise GraphQL::ExecutionError, "Unauthorized" unless current_user
-  end
-  
   private
+
+  def authenticate_request
+      raise GraphQL::ExecutionError, 'Sem autorização' unless current_user
+  end
+
 
   # Handle variables in form data, JSON body, or a blank value
   def prepare_variables(variables_param)

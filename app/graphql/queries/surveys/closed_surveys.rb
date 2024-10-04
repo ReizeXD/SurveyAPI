@@ -1,7 +1,7 @@
 module Queries
     module Surveys
         class ClosedSurveys < Queries::BaseQuery
-        type [Types::SurveyType], null: false
+            type [Types::SurveyType], null: false
             
             def resolve
                 is_logged?
