@@ -3,3 +3,18 @@ pt-BR:
     user:
       token_not_created: "O token do usuário não foi criado."
       invalid_credentials: "Credenciais erradas do usuário."
+    survey:
+      access_denied: "Acesso negado: você não tem permissão para editar esta pesquisa."
+      not_exists: "A pesquisa solicitada não existe."
+    messages:
+      taken: "Já está em uso"
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              taken: "Esse email já está em uso"
+            password:
+              too_short: "A senha é muito curta (mínimo de %{count} caracteres)"

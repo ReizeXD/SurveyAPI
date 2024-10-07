@@ -3,6 +3,8 @@ module Mutations
         class CreateUser < Mutations::BaseMutation
             input_object_class Types::Inputs::User::CreateUserInput
     
+            description "Criando um usuario"
+
             field :user, Types::UserType, null: false
             field :token, String, null: false
     

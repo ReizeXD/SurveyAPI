@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
 
   def current_user
         if decode_token
-          params = decoded_token
+          params = decode_token
           if params[:user_id].present?
             user = User.find_by(id: params[:user_id])
             if user

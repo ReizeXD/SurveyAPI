@@ -11,5 +11,8 @@ module Types
 
     field :create_user, resolver: Mutations::Users::CreateUser
     field :login_user, resolver: Mutations::Users::LoginUser
+
+    field :create_survey, resolver: Mutations::Surveys::CreateSurvey
+    field :update_survey, resolver: Mutations::Surveys::UpdateSurvey
   end
 end
