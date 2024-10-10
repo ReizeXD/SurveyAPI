@@ -14,5 +14,10 @@ module Types
 
     field :create_survey, resolver: Mutations::Surveys::CreateSurvey
     field :update_survey, resolver: Mutations::Surveys::UpdateSurvey
+
+    field :create_question, resolver: Mutations::Questions::CreateQuestion
+    field :update_question, resolver: Mutations::Questions::UpdateQuestion
+
+
   end
 end

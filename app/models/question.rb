@@ -8,5 +8,11 @@ class Question < ApplicationRecord
 
   validates :title, presence: true
   validates :question_type, presence: true
+  
+  TYPE_QUESTION = {
+    "text" => "Texto",
+    "choice_questions" => "Multiplas Escolhas",
+    "checkbox" => "Caixa de seleção"
+  }.freeze
 
 end
