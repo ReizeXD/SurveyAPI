@@ -4,7 +4,9 @@ class SurveyServices
         @user_id=user_id
     end
     def call
-        if @attributes[:id].present?
+        if @attributes[:delete].present?
+            delete_survey
+        elsif @attributes[:id].present?
             update_survey
         else
             new_survey
@@ -38,4 +40,22 @@ class SurveyServices
             raise GraphQL::ExecutionError, I18n.t('errors.survey.not_exits')
         end
     end
+
+    def delete_survey
+        survey=Survey.find_by(id: @attributes[:id])
+        if survey
+            if survey.user_id==@user_id
+                if survey.destroy
+                    "Survey deleted successfully" 
+                else
+                    raise GraphQL::ExecutionError, survey.errors.full_messages.join(", ")
+                end
+            else
+                raise GraphQL::ExecutionError, I18n.t('errors.survey.access_denied')
+            end
+        else
+            raise GraphQL::ExecutionError, I18n.t('errors.survey.not_exits')
+        end
+    end
+
 end
