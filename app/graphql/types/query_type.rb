@@ -33,6 +33,9 @@ module Types
     field :open_surveys, resolver: Queries::Surveys::OpenSurveys, description: "Retorna uma lista com todas as pesquisas abertas"
     field :closed_surveys, resolver: Queries::Surveys::ClosedSurveys, description: "Retorna uma lista com todas as pesquisas fechadas"
     field :users_surveys, resolver: Queries::Surveys::UserSurveys, description: "Retorna uma lista com todas as pesquisas do coordenador"
+      
+    field :options_question, resolver: Queries::Options::OptionsQuestion, description: "Retorna uma lista com todas as pesquisas abertas"
+      
 
   end
 end

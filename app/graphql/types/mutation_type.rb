@@ -16,10 +16,14 @@ module Types
     field :update_survey, resolver: Mutations::Surveys::UpdateSurvey
     field :delete_survey, resolver: Mutations::Surveys::DeleteSurvey
     
-
+    
     field :create_question, resolver: Mutations::Questions::CreateQuestion
     field :update_question, resolver: Mutations::Questions::UpdateQuestion
-
+    field :delete_quetion, resolver: Mutations::Questions::DeleteQuestion
+    
+    field :create_option, resolver: Mutations::Options::CreateOption
+    field :update_option, resolver: Mutations::Options::UpdateOption
+    field :delete_option, resolver: Mutations::Options::DeleteOption
 
   end
 end
