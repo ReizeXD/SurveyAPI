@@ -16,5 +16,9 @@
     question=Question.create!(title: "Questão 1", question_type: 0, survey_id: 1)
     option1=Option.create!(content:"Letra A", question_id: 1)
     option2=Option.create!(content:"Letra B",question_id: 1)
+    
+    response=Response.create!(content: "Letra A", survey_id: 1, question_id: 1, user_id:1)
 
-    response=Response.create!(content: "Resposta da pesquisa", survey_id: 1, question_id: 1, user_id:1)
+    question2=Question.create!(title: "Questão 2", question_type: 0, survey_id: 1)
+    option1=Option.create!(content:"Letra A", question_id: 2)
+    option2=Option.create!(content:"Letra B",question_id: 2)

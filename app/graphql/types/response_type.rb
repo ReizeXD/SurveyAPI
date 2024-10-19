@@ -3,7 +3,7 @@
 module Types
   class ResponseType < Types::BaseObject
     field :id, ID, null: false
-    field :content, String
+    field :content, String, null: false
     field :question_id, Integer, null: false
     field :user_id, Integer, null: false
     field :survey_id, Integer, null: false

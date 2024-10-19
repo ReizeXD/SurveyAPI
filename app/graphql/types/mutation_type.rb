@@ -24,6 +24,11 @@ module Types
     field :create_option, resolver: Mutations::Options::CreateOption
     field :update_option, resolver: Mutations::Options::UpdateOption
     field :delete_option, resolver: Mutations::Options::DeleteOption
+    
+    field :create_response, resolver: Mutations::Responses::CreateResponse
+
 
   end
 end
+
+
