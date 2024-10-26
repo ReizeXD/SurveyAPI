@@ -97,6 +97,8 @@ Este projeto foi desenvolvido com a finalidade de servir como teste para um proc
 - **JWT (JSON Web Token)**
 - **PostgreSQL**
 - **RSpec**
+- **bcrypt**
+- **factory-bot-rails**
 
 ---
 
