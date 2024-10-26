@@ -1,0 +1,236 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2024-10-25T00:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.3.0",
+  "resources": [
+    {
+      "_id": "env_1",
+      "_type": "environment",
+      "data": {
+        "token": "YOUR_JWT_TOKEN"
+      },
+      "name": "Base Environment"
+    },
+    {
+      "_id": "req_update_survey",
+      "_type": "request",
+      "name": "update_survey",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation UpdateSurvey { updateSurvey(input: {id: 1, closed: true}) { survey { id title description startDate endDate closed userId } } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_create_survey",
+      "_type": "request",
+      "name": "create_survey",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation createSurvey { createSurvey(input: {title: \\\"Pesquisa 2\\\", description: \\\"Descricao\\\", startDate: \\\"2024-09-18\\\", endDate: \\\"2024-09-30\\\", closed: true}) { survey { id title description startDate endDate closed userId } } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_survey_by_id",
+      "_type": "request",
+      "name": "survey_by_id",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"query GetSurveyById { surveyById(id: 1) { id title description startDate endDate closed userId createdAt updatedAt } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_all_surveys",
+      "_type": "request",
+      "name": "all_surveys",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"query GetAllSurveys { allSurveys { id title description startDate endDate closed userId createdAt updatedAt questions { id title questionType surveyId options { id content } } } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_create_question",
+      "_type": "request",
+      "name": "create_question",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation createQuestion { createQuestion(input: {title: \\\"Questao 7\\\", questionType: 2, options:[\\\"Letra A\\\",\\\"Letra B\\\"], surveyId: 1}) { question { id title questionType surveyId options { id content } } } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_update_question",
+      "_type": "request",
+      "name": "update_question",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation updateQuestion { updateQuestion(input: {id: 6, title: \\\"Questao 7\\\", questionType: 1, options:[\\\"Letra A\\\", \\\"Letra B\\\"]}) { question { id title questionType surveyId options { id content } } } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_delete_survey",
+      "_type": "request",
+      "name": "delete_survey",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation deleteSurvey { deleteSurvey(input: {id: 1}) { message } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_create_option",
+      "_type": "request",
+      "name": "create_option",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation createOption { createOption(input: {content: \\\"Opção 6\\\", questionId: 5}) { option { content questionId } } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_options_question",
+      "_type": "request",
+      "name": "options_question",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"query optionsQuestion { optionsQuestion(id: 35) { id content questionId } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_update_option",
+      "_type": "request",
+      "name": "update_option",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation updateOption { updateOption(input: {id: 36, content: \\\"Letra 1\\\"}) { option { id content questionId } } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_delete_option",
+      "_type": "request",
+      "name": "delete_option",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation deleteOption { deleteOption(input: {id: 37}) { message } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_create_response",
+      "_type": "request",
+      "name": "create_response",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation createResponse { createResponse(input: { surveyId: 1, responses: [{ questionId: 1, content: \\\"Letra A\\\" }, { questionId: 2, content: \\\"Letra A\\\" }, { questionId: 3, content: \\\"Letra B\\\" }, { questionId: 4, content: \\\"Letra A\\\" }, { questionId: 5, content: \\\"Letra A\\\" }, { questionId: 6, content: \\\"Letra A\\\" }, { questionId: 7, content: \\\"Letra A\\\" }] }) { message clientMutationId } }\"}"
+      },
+      "headers": [
+        {
+          "name": "Authorization",
+          "value": "Bearer {{ token }}"
+        }
+      ]
+    },
+    {
+      "_id": "req_login_user",
+      "_type": "request",
+      "name": "login_user",
+      "url": "http://localhost:3000/graphql",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\"query\": \"mutation loginUser { loginUser(input: { email: \\\"a@gmail.com\\\", password: \\\"123456\\\" }) { token user { id name email } } }\"}"
+      }
+    },
+    {
+      "_id": "wrk_project",
+      "_type": "workspace",
+      "name": "Survey Project"
+    }
+  ]
+}
